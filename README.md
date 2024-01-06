@@ -10,7 +10,7 @@
 
 
 # SCSS
-    SCSS (Sassy CSS) là một cú pháp mở rộng của CSS3 được SASS hỗ trợ. Điểm khác biệt chính giữa SCSS và CSS là SCSS sử dụng cú pháp tương tự CSS truyền thống, có nghĩa là bạn có     thể bắt đầu sử dụng SCSS mà không cần học lại cách viết CSS. 
+    SCSS (Sassy CSS) là một cú pháp mở rộng của CSS3 được SASS hỗ trợ. Điểm khác biệt chính giữa SCSS và CSS là SCSS sử dụng cú pháp tương tự CSS truyền thống, có nghĩa là bạn có thể bắt đầu sử dụng SCSS mà không cần học lại cách viết CSS. 
 # Cách cài đặt SCSS
   Với npm:
     npm i scss
