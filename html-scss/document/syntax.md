@@ -1,10 +1,10 @@
 - Về cú pháp:
     + ![Alt text](../assets/images/scss-syntax.png) 
     + Dấu & được gọi là Parent selector
-    + có một cách viết ngắn gọn các thuộc tính là
-    Viết bình thường:
+    + Có một cách viết ngắn gọn các thuộc tính là
+        * Viết bình thường:
      ![Alt text](../assets/images/syntax-properties.png)
-    Rút gọn:
+        * Rút gọn:
      ![Alt text](../assets/images/short-syntax-properties.png)
 - Biến: 
 ```sh
