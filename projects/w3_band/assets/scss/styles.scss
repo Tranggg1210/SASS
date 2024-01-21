@@ -11,6 +11,7 @@
 html {
     font-family: 'Lato', sans-serif;
     line-height: 1.6;
+    scroll-behavior: smooth;
 }
 
 h1,
@@ -24,24 +25,90 @@ h6 {
     margin: 10px 0;
 }
 
-.flex {
+// common
+.flex-center {
     display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.m16-0 {
+.mar16-0 {
     margin: 16px 0;
 }
 
-#header {
-    background-color: $black-color;
-    height: 46px;
-    padding: 8px 0;
-    justify-content: space-between;
-    align-items: center;
+.pad8-16 {
+    padding: 8px 16px;
+}
+
+.text-center {
+    text-align: center !important;
+}
+
+.text-white {
+    color: $white-color !important;
+}
+
+.btn {
+    cursor: pointer;
+}
+
+.font-15 {
+    font-size: 15px !important;
+}
+
+.position-fix {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
+    bottom: 0;
+}
+
+.trans-400ms {
+    transition: all 0.4s linear;
+}
+
+.hover-ccc:hover {
+    background-color: #ccc !important;
+    color: $black-color !important;
+}
+
+.col-half {
+    width: 50%;
+}
+
+.btn-buy,
+#header,
+.quantity,
+.tour-section,
+.btn-send {
+    background-color: $black-color;
+}
+
+.subnav,
+.modal-container,
+.place-item,
+.tickets-list {
+    background-color: $white-color;
+}
+
+input {
+    width: 100%;
+    padding: 10px 8px;
+    display: block;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    font-family: "Lato", sans-serif;
+    border-radius: 2px;
+}
+
+// main
+
+#header {
+    height: 46px;
+    padding: 8px 0;
+    bottom: auto;
+    justify-content: space-between;
     z-index: 100;
 
     ul {
@@ -55,7 +122,6 @@ h6 {
             li,
             i {
                 position: relative;
-                transition: all 0.4s ease;
 
                 &:hover .subnav {
                     display: block;
@@ -67,19 +133,18 @@ h6 {
             width: 160px;
             position: absolute;
             display: none;
-            background-color: $white-color;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
         }
     }
 
     a {
         padding: 0px 24px;
-        color: $white-color;
         text-decoration: none;
         font-size: $primary-fsize;
         text-transform: uppercase;
         display: block;
-        transition: all 0.4s ease;
+        transition: all 0.4s linear;
+        color: $white-color;
     }
 
     .subnav a {
@@ -88,18 +153,14 @@ h6 {
         color: $black-color;
     }
 
-    i {
-        color: $white-color;
-
-        &.fa-magnifying-glass {
-            padding: 0px 24px;
-            cursor: pointer;
-        }
+    i.fa-magnifying-glass {
+        padding: 0px 24px;
+        cursor: pointer;
+        line-height: 46px;
+        display: block;
 
         &:hover {
             background-color: red;
-            line-height: 46px;
-            display: block;
         }
     }
 
@@ -128,8 +189,6 @@ h6 {
         width: 100vw;
         position: absolute;
         bottom: 40px;
-        color: $white-color;
-        text-align: center;
 
         h2 {
             font-weight: 600;
@@ -143,9 +202,9 @@ h6 {
 
 .content-section {
     width: 800px;
-    padding: 64px 16px;
+    padding: 64px 16px 112px;
     margin: 0 auto;
-    text-align: center;
+    text-align: justify;
 
     .section-heading {
         letter-spacing: 4px;
@@ -157,123 +216,187 @@ h6 {
         opacity: 0.6;
     }
 
-    .about-text {
-        text-align: justify;
-        font-size: 15px;
-    }
+    .member-item {
+        width: 20%;
+        margin: 0 32px;
 
-    .members-list {
-        display: flex;
-        justify-content: space-between;
-
-        .member-item {
-            width: 20%;
-
-            .member-avatar {
-                border-radius: 12px;
-                width: 100%;
-            }
+        .member-avatar {
+            border-radius: 12px;
+            width: 100%;
         }
     }
 }
 
 /*Tour section*/
-.tour-section {
-    background-color: $black-color;
-    color: $white-color;
+.tickets-list {
+    text-align: left;
+    list-style: none;
+    margin-top: 40px;
+    color: #000;
 
-    .tickets-list {
-        background-color: $white-color;
-        text-align: left;
-        list-style: none;
-        margin-top: 40px;
-        color: #000;
+    li {
+        border-bottom: 1px solid #ddd;
+        color: #757575;
+    }
 
-        li {
-            padding: 8px 16px;
-            border-bottom: 1px solid #ddd;
-            font-size: 15px;
-            color: #757575;
+    .sold-out {
+        background-color: #f44336;
+        margin-left: 16px;
+        padding: 4px 3px;
+    }
+
+    .quantity {
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        float: right;
+    }
+}
+
+.places-list {
+    margin-top: 32px;
+    padding-bottom: 48px;
+    justify-content: space-between;
+
+    .place-item {
+        width: 32%;
+        color: $black-color;
+
+        .place-img {
+            width: 100%;
+            position: relative;
+
+            &:hover {
+                opacity: 0.4;
+            }
         }
 
-        .sold-out {
-            color: $white-color;
-            background-color: #f44336;
-            margin-left: 16px;
-            padding: 4px 3px;
+        .place-body {
+            padding: 0 16px;
+
+            .place-heading {
+                font-weight: 800;
+            }
+
+            .place-time {
+                opacity: 0.6;
+            }
+
+            .btn-buy {
+                margin-bottom: 16px;
+                border: none;
+            }
+
         }
 
-        .quantity {
-            width: 24px;
-            height: 24px;
-            border-radius: 50%;
-            background-color: $black-color;
-            color: $white-color;
-            text-align: center;
-            float: right;
+    }
+}
+
+/*about*/
+.col-half {
+    p {
+        margin: 10px 0;
+        font-size: 17px;
+
+        i {
+            margin-right: 12px;
         }
     }
 
-    .places-list {
-        display: flex;
-        justify-content: space-between;
-        margin-top: 32px;
-        text-align: left;
-        padding-bottom: 48px;
+    .btn-send {
+        float: right;
+        border: none;
+        margin-top: 10px;
+        padding: 12px 14px;
+        font-size: 16px;
+    }
+}
 
-        .place-item {
-            background-color: $white-color;
-            width: 32%;
+#footer {
+    padding: 64px 0;
+
+    a {
+        text-decoration: none;
+        font-size: 22px;
+        color: #757575;
+        margin-right: 4px;
+
+        &:hover {
+            opacity: 0.6;
+        }
+    }
+
+    p {
+        color: #757575;
+
+        a {
+            text-decoration: underline;
+        }
+    }
+}
+
+/*modal*/
+.modal {
+    z-index: 101;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: none;
+
+    &-container {
+        width: 54%;
+        min-height: 200px;
+        position: relative;
+    }
+
+    &-close {
+        position: absolute;
+        top: 0;
+        right: 0;
+
+        &:hover {
+            background: #ccc;
             color: $black-color;
-            font-size: 15px;
+        }
+    }
 
+    &-header {
+        background: $green-color;
+        padding: 32px 16px;
+        font-size: 32px;
 
-            .place-img {
-                width: 100%;
-                position: relative;
+        i {
+            margin-right: 4px;
+        }
+    }
 
-                &:hover {
-                    background-color: #000;
-                    opacity: 0.6;
-                }
-            }
+    &-body {
+        padding: 12px 20px;
+    }
 
-            .place-body {
-                padding: 0 16px;
+    &-label {
+        font-size: 16px;
+        display: block;
+        margin: 10px 0;
 
-                .place-heading {
-                    font-weight: 800;
-                    font-size: 15px;
-                    font-family: 'Lato', sans-serif;
-                }
+        i,
+        .fa-check {
+            margin-right: 4px;
+        }
+    }
 
-                .place-time {
-                    opacity: 0.6;
-                }
+    .buy-tickets {
+        background-color: $green-color;
+        width: 100%;
+        border: none;
+        padding: 16px;
+        cursor: pointer;
+    }
 
-                .place-desc {
-                    margin: 15px 0;
-                }
+    &-help {
+        text-align: right;
+        margin: 0 16px 32px;
 
-                .btn-buy {
-                    margin-bottom: 16px;
-                    background-color: $black-color;
-                    color: $white-color;
-                    padding: 8px 16px;
-                    border: none;
-                    font-family: 'Lato', sans-serif;
-                    font-size: 15px;
-                    transition: hover 0.6s linear;
-                    cursor: pointer;
-
-                    &:hover {
-                        background-color: #ccc;
-                        color: $black-color;
-                    }
-                }
-
-            }
-
+        >a {
+            color: #2196f3;
         }
     }
 }

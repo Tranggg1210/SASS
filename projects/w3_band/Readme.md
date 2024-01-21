@@ -14,3 +14,4 @@
     + Dựng base
     + Xây dựng từng thành phần theo phân tích
     + Hoàn thiện
+- Cách Css selector với các class có phần đầu giống nhau: i[class*="ti-"]
