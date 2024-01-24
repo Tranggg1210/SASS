@@ -31,3 +31,5 @@
     yarn add scss
     ```
 # Link doc: https://sass-lang.com/
+
+# Xem độ tương thích của các thuộc tính CSS với các loại trình duyệt: https://caniuse.com/
