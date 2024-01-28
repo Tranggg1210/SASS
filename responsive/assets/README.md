@@ -43,3 +43,21 @@
 5. Breakpoints là những điểm/ vị trí mà bố cục website sẽ thay đổi - thích ứng để tạo nên giao diện responsive
 
 6. Chúng ta nên sử dụng đơn vị: em để responsive trang web 
+
+7. Thuộc tính bên dưới dùng để khi một text bị vượt quá một box mà mình quy định kích thước thì nó sẽ xuất hiện dấu ... thay thế cho các ô đã bị vượt
+```sh
+display: -webkit-box; 
+-webkit-box-orient: vertical;
+-webkit-line-clamp: 2;
+```
+
+8. Khi người dùng chọn vào thẻ a là chữ trên thẻ a đổi màu về màu đen trên màn mobile thì dùng thuộc tính 
+```sh
+user-select: none;
+-webkit-user-select: none;
+-webkit-tap-highlight-color: transparent; 
+```
+
+9. Có thể tạo menu trên màn mobile bằng thẻ label và input có type checkbox
+
+10. Các xem trang web của mình khi chạy bằng live server trên điện thoại: https://fullstack.edu.vn/learning/responsive-web-design?id=80434f73-2538-43d7-9736-1f417fa89f93
