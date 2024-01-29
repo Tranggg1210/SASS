@@ -1,132 +1,61 @@
-// Global
-$primary-color: red;
-
-:root {
-    --text-color: #333;
-}
-
-*,
-::before,
-::after {
-    box-sizing: border-box;
-}
-
-// VD 1
-// .card {
-//     width: 300px;
-//     padding: 20px;
-//     border: 2px solid #ccc;
-//     border-radius: 8px;
-
-//     .thumb {
-//         width: 100%;
-//     }
-
-//     .title {
-//         font-size: 22px;
-//     }
-
-//     strong {
-//         color: red;
-//     }
-
-//     .desc {
-//         font-size: 18px;
-//     }
-
-//     .btn-link {
-//         color: #666;
-//     }
-// }
-
-// VD 2
-// .card {
-//     width: 300px;
-//     padding: 20px;
-//     border: 2px solid #ccc;
-//     border-radius: 8px;
-
-//     &-thumb {
-//         width: 100%;
-//     }
-
-//     &-title {
-//         font-size: 22px;
-//     }
-
-//     strong {
-//         color: red;
-//     }
-
-//     &-desc {
-//         font-size: 18px;
-//     }
-
-//     &-btn-link {
-//         color: #666;
-//     }
-// }
-
-// VD 3
-.card {
-    $font-family: monospace;
-
-    width: 300px;
-    padding: 20px;
-    border: 2px solid #ccc;
-    border-radius: 8px;
+.btn {
+    padding: 8px 16px;
+    margin: 0 16px;
+    border-radius: 4px;
+    background: #000;
+    color: #fff;
+    outline: none;
+    border: none;
+    transition: all 0.4s linear;
+    cursor: pointer;
 
     &:hover {
-        background: #f1f1f1;
+        background-color: darkblue;
     }
+}
 
-    &:hover &__title {
-        color: blue;
-    }
+// placeholder selector
+// %btn {
+//     padding: 8px 16px;
+//     margin: 0 16px;
+//     border-radius: 4px;
+//     background: #000;
+//     color: #fff;
+//     outline: none;
+//     border: none;
+//     transition: all 0.4s linear;
+//     cursor: pointer;
 
-    &:hover &__title::before {
-        color: orange;
-    }
+//     &:hover {
+//         background-color: darkblue;
+//     }
+// }
 
-    &--bottom {
-        margin-top: 100px;
-    }
+.btn-primary {
+    @extend .btn;
+}
 
-    &__thumb {
-        width: 100%;
-    }
+.btn-secondary {
+    @extend .btn;
+    background-color: orangered;
+}
 
-    &__title {
-        font-size: 22px;
-        font-family: $font-family;
-        color: $primary-color;
+.btn-success {
+    @extend .btn;
+    background: green;
+}
 
-        strong {
-            color: $primary-color;
-        }
+.btn-warning {
+    @extend .btn;
+    background-color: gold;
+}
 
-        &--large {
-            font-size: 32px;
-        }
+.btn-info {
+    @extend .btn;
+    background-color: cornflowerblue;
+}
 
-        &::before {
-            content: "1. ";
-        }
-
-        // &:hover {
-        //     color: green;
-        // }
-    }
-
-    &__desc {
-        font: {
-            size: 18px;
-            weight: 600;
-            style: italic;
-        }
-    }
-
-    &__btn-link {
-        color: #666;
-    }
+.btn-danger {
+    @extend .btn;
+    background-color: red;
 }
