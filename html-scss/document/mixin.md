@@ -37,3 +37,22 @@ Truyền đối số theo tên
     - Tạo grid layout có theo hàng và cột
     - Có tham số "column" và spacing
     - Kết hợp sử dụng biến CSS & biến Sass
+```sh
+@mixin grid($column: 4, $spacing: 12px) {
+    display: flex;
+    flex-wrap: wrap;
+    --column: #{$column};
+    --spacing: #{$spacing};
+
+    >* {
+        width: calc(100%/var(--column) - var(--spacing));
+        margin-right: var(--spacing);
+        margin-top: var(--spacing);
+
+        &:hover>* {
+            transform: scale(1.1, 0);
+            background-color: cornflowerblue;
+        }
+    }
+}
+```

@@ -1,132 +1,38 @@
+// @import './base/variables';
+// @import './base/mixins';
+// @import './base/reset';
+// @import './base/common';
+
+@use './base/variables';
+@use './base/mixins';
+@use './base/reset';
+@use './base/common';
+
+@import './components/header';
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    overflow-x: hidden;
 }
 
-body {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-}
+.container {
+    position: relative;
+    background: #ccc;
+    padding: 12px;
+    @include mixins.grid(5, 12px);
 
-@mixin flexCenter {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-@mixin size($width: 200px, $height: 200px) {
-    width: $width;
-    height: $height;
-}
-
-@mixin move($x, $y: null, $c: null) {
-    translate: $x $y;
-    rotate: $c;
-}
-
-@mixin rounded($tl, $tr: $tl, $br: $tl, $bl: $tl) {
-    border-radius: $tl $tr $br $bl;
-    @include move($bl, null, 45deg);
-
-}
-
-
-
-.center {
-    @include flexCenter();
-    @include size();
-    @include rounded(8px, 16px, 10px);
-    background-color: orange;
-
-    font: {
-        size: 30px;
-        weight: 600px;
+    @include mixins.screen(mobile) {
+        @include mixins.grid(1);
     }
-}
 
-.box {
-    @include flexCenter();
-    @include size(300px, 300px);
-    margin-top: 36px;
-    background-color: bisque;
-
-    font: {
-        weight: 600px;
-        size: 40px;
+    @include mixins.screen(tablet) {
+        @include mixins.grid(3)
     }
-}
 
-// Giải quyết bài toán mục II của phần mixin.md
-
-// Cách 1:
-// @mixin grid() {
-//     display: flex;
-//     flex-wrap: wrap;
-// }
-
-// @mixin row($spacing: 12px) {
-//     @include grid();
-//     margin-left: -($spacing);
-//     margin-right: -($spacing);
-// }
-
-// @mixin column($column: 4, $spacing: 4px) {
-//     flex: 0 0 calc(100%/$column);
-//     max-width: calc((100%/$column));
-//     padding-left: $spacing;
-//     padding-right: $spacing;
-// }
-
-// .row {
-//     @include row();
-// }
-
-// .col {
-//     @include column(10, 12px);
-//     margin: 12px 0;
-// }
-
-h1 {
-    background-color: orange;
-    font-weight: 200;
-    font-size: 20px;
-    line-height: 200px;
-}
-
-// Cách 2:
-@mixin grid($column: 4, $spacing: 12px) {
-    display: flex;
-    flex-wrap: wrap;
-    --column: #{$column};
-    --spacing: #{$spacing};
-
-    >* {
-        width: calc(100%/var(--column) - var(--spacing));
-        margin-right: var(--spacing);
-        margin-top: var(--spacing);
-
-        &:hover>* {
-            transform: scale(1.1, 0);
-            background-color: cornflowerblue;
-        }
-    }
-}
-
-.row {
-    @include grid(5);
-
-    h1 {
-        background-color: green;
+    .item {
+        background-color: olivedrab;
+        padding: 32px 0;
         color: #fff;
-        font-weight: 200;
-        font-size: 20px;
-        line-height: 200px;
-        transition: all linear 0.4s;
-
     }
-}
-
-.col {
-    overflow: hidden;
 }

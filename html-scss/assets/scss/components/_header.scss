@@ -1,0 +1,6 @@
+@use '../base';
+
+.header {
+    height: base.$header-height;
+    background-color: base.$primary-color;
+}
