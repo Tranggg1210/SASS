@@ -1,0 +1,63 @@
+// numbers
+$header-height: 28px;
+
+// string
+$name: "Nguyễn Thị Trang";
+
+// colors
+$primary-color: green;
+$secondary-color: rgba($color: $primary-color, $alpha: 0.5);
+@debug $secondary-color;
+
+// lists
+$list: red, green, blue, yellow;
+
+// maps
+// $break-points: (
+//     "mobile": 575px,
+//     "tablet": 768px,
+//     "desktop": 991px
+// );
+
+// boolean
+$success: true;
+$error: false;
+
+// null
+$align: null;
+
+// Các loại toán tử
+// ==
+@if 10==10 {
+    .box {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+@debug 10==10;
+
+// if - else
+$condition: true;
+
+h1 {
+    @if $condition {
+        color: red;
+    }
+
+    @else {
+        color: green;
+    }
+}
+
+// each
+$break-points: 575px 768px 991px;
+
+@each $break-point in $break-points {
+    @debug $break-point;
+}
+
+// for
+@for $i from 1 to 10 {
+    @debug $i;
+}
