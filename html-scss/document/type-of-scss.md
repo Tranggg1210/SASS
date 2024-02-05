@@ -96,3 +96,4 @@
 
             - Muốn debug in ra các giá trị từ 1 đến 10 thì thay chữ to -> through 
             ```
+        - Hàm map-get(tên map, key) dùng để lấy value của từng key

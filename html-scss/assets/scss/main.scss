@@ -1,7 +1,11 @@
-@use './base';
-@use './components';
-@use './layout';
-@use './pages';
-@use './themes';
-@use './vendors';
-@use './abstracts'
+@use './reset';
+
+@use './grid' with ($grid-gutter-width: 20px);
+
+
+.item {
+    background-color: green;
+    width: 100%;
+    height: 200px;
+    color: #fff;
+}

@@ -30,9 +30,11 @@
     color: #fff;
 }
 .btn-primary{
+    @extend %btn;
     background: blue;
 }
 .btn-secondary{
+    @extend %btn;
     background: green;
 }
 ```
