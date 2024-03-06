@@ -1,5 +1,5 @@
 ## TỔNG QUAN VỀ BOOLEAN
---> Boolean là một kiểu dữ liệu primitive  và chỉ có giá trị true hoặc false
+--> Boolean là một kiểu dữ liệu primitive  và chỉ có giá trị true hoặc false.\\\
 --> Mỗi kiểu dữ liệu đều có sẵn cho mình một object. Trong object chứa các phương thức để thao tác với kiểu dữ liệu đó.
 ### 1. Type conversion vs Type coercion
 - Điểm tương đồng là đều chuyển đổi dữ liệu từ kiểu này sang kiểu khác.
