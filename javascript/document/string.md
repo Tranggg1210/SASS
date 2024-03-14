@@ -27,7 +27,7 @@
 | #  | Name                                     | Desc                                                |
 |:-- | :---                                     | :---                                                |
 | 1  | charAt(index)                            | Lấy ký tự tịa vị trí index                          |
-| 2  | concat(str[,...strN])                    | Nỗi chuỗi                                           |
+| 2  | concat(str[,...strN])                    | Nối chuỗi                                           |
 | 3  | includes(searchString[,position])        | Có chứa chuỗi nào đó không?                         |
 | 4  | startsWith(searchString [, length])      | Có bắt đầu với chuỗi searchString                   |
 | 5  | endsWith(searchString [,length])         | Có kết thúc với chuỗi searchString                  |

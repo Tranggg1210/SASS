@@ -47,7 +47,7 @@
     + null <= 0: So sánh null với số 0.
     + null >= 0: So sánh null với số 0.
     + null >= '': So sánh null với chuỗi rỗng ''.
-    + null < = '': So sánh null với chuỗi rỗng ''.
+    + null <= '': So sánh null với chuỗi rỗng ''.
 - Khi so sánh khác kiểu dữ liệu, js sẽ tự động convert giá trị về dạng number để so sánh
 
 --> Để biết khi so sánh các giá trị sẽ convert sang giá trị gì thì tra bảng sau: https://getify.github.io/coercions-grid/
